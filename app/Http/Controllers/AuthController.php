@@ -60,7 +60,7 @@ class AuthController extends Controller
             'message' => 'Hola '.$user->nombre.' '.$user->apellido,
             'access_token' => $token,
             'token_type' => 'Bearer',
-            'user' => $user->with('roles')->get()
+            'user' => $user
         ]);
     }
 
@@ -75,7 +75,7 @@ class AuthController extends Controller
 
     public function logout(): JsonResponse {
 
-        auth()->user->tokens()->delete();
+        auth()->user()->tokens()->delete();
         return response()->json([
             'message' => 'A salido de la sesion con exito.'
         ]);
