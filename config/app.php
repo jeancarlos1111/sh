@@ -196,6 +196,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //Laravel Auditing
         OwenIt\Auditing\AuditingServiceProvider::class,
+        // Validaciones en español
+        Laraveles\Spanish\SpanishServiceProvider::class,
 
     ],
 

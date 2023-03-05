@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\AlmacenController;
+use App\Http\Controllers\API\EntradaController;
+use App\Http\Controllers\API\InstitucionController;
+use App\Http\Controllers\API\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -30,6 +34,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user/profile',[AuthController::class, 'userProfile']);
 
     // Api Roles
+
+    // Api Institucion
+    Route::apiResource('instituciones', InstitucionController::class);
+    // Api Almacenes
+    Route::apiResource('almacenes', AlmacenController::class);
+    // Api productos
+    Route::apiResource('productos', ProductoController::class);
+    // Api entradas
+    Route::apiResource('entradas', EntradaController::class);
     
 });
 
